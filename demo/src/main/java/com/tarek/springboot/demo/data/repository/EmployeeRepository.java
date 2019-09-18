@@ -7,5 +7,6 @@ import java.util.UUID;
 
 public interface EmployeeRepository extends JpaRepository<Employee, UUID> {
 
+    Employee findFirstByFirstName(String firstName);
 
 }

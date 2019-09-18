@@ -1,4 +1,4 @@
-package com.tarek.springboot.demo.Employee;
+package com.tarek.springboot.demo.employee;
 
 import com.tarek.springboot.demo.data.entity.Employee;
 import com.tarek.springboot.demo.data.repository.EmployeeRepository;
@@ -17,8 +17,12 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public List<Employee> getAllEmployees() {
+    List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
+    }
+
+    Employee addEmployee(Employee employee) {
+        return employeeRepository.save(employee);
     }
 
 

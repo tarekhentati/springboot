@@ -1,5 +1,6 @@
 package com.tarek.springboot.demo.data.entity;
 
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.context.annotation.Lazy;
@@ -9,6 +10,8 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity
+@Data
+@NoArgsConstructor
 public class Employee {
 
     @Id
@@ -41,59 +44,10 @@ public class Employee {
     @Column(name = "updated_date")
     private Date updatedDate;
 
-    public UUID getSecurityNumber() {
-        return securityNumber;
-    }
-
-    public void setSecurityNumber(UUID securityNumber) {
-        this.securityNumber = securityNumber;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
+    public Employee(String firstName, String lastName, int age, double salary) {
         this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
         this.age = age;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
         this.salary = salary;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public Date getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(Date updatedDate) {
-        this.updatedDate = updatedDate;
     }
 }

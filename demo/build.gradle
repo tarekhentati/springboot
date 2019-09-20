@@ -21,6 +21,12 @@ dependencies {
     compile('org.flywaydb:flyway-core')
     runtime('org.postgresql:postgresql')
 
+    //Actuator dependency
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+    // https://mvnrepository.com/artifact/io.micrometer/micrometer-registry-prometheus
+    compile group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: '1.1.2'
+
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.junit.jupiter:junit-jupiter-engine:5.2.0')
     testCompile('org.mockito:mockito-junit-jupiter:2.23.0')

@@ -35,4 +35,9 @@ public class Department {
     @UpdateTimestamp
     @Column(name = "updated_date")
     private Date updatedDate;
+
+    public Department(String name, String location) {
+        this.name = name;
+        this.location = location;
+    }
 }
